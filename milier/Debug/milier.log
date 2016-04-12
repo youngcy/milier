@@ -1,0 +1,10 @@
+﻿  xmler.cpp
+  wseg.cpp
+  milier.cpp
+  main.cpp
+  indexer.cpp
+e:\interestproject\cplusplus\milier\milier\indexer.cpp(7): error C2065: “make_shared”: 未声明的标识符
+e:\interestproject\cplusplus\milier\milier\indexer.cpp(7): error C2059: 语法错误:“)”
+  docsdb.cpp
+  cachedb.cpp
+  正在生成代码...
