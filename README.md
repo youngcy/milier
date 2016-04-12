@@ -17,16 +17,17 @@ In my thoughts, the search engineering will including follows part:
 The basic architecture is:
 
 
-  crawler1  -----|					|---indexer1
-  crawler2  -----|					|---indexer2
-  crawler3  -----|					|---indexer3
-  crawler4  -----|	==>db/mq ==>	|---indexer4 ==>db ==>milier
-  ...		---..|					|---...					|
-  crawlern  -----|					|---indexern			|
-										|					|
-										|					|
-  					words segment-------					|
-									cache--------------------
+  crawler1  -----|		    |---indexer1
+  crawler2  -----|		    |---indexer2
+  crawler3  -----|		    |---indexer3
+  crawler4  -----|	==>db/mq ==>|---indexer4 ==>db ==>milier
+  ........  ---..|		    |---...
+  crawlern  -----|		    |---indexern	|
+  				    |			|
+					|		|
+					|		|
+  		     words segment-------		|
+				cache--------------------
 									
 we use crawler to crawl the website every result is a web page, then crawler put
 the pages into the db or mq. The crawler is a distribute systerm.
@@ -46,5 +47,5 @@ the inverted index to find inverted index lists. Then we should use logic comput
 search what result users wanted.
 
 Contact me:
-		author	:	youngcy
-		email	:	youngcy.youngcy@gmail.com
+	author : youngcy
+	email  : youngcy.youngcy@gmail.com
