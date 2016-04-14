@@ -4,6 +4,9 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <unordered_set>
+#include <fstream>
+#include <string>
 
 
 typedef long long int _document_id_t;
@@ -25,6 +28,7 @@ typedef std::map<std::string, inverted_index_iterm> _index_dict_t;
 typedef std::map<std::string, inverted_index_iterm>::iterator _index_dict_iter_t;
 
 typedef std::map<std::string, postings_list> _words_map_t;
+typedef std::map<std::string, postings_list>::iterator _words_map_iter_t;
 
 template <type _Iter, type _Value>
 int binary_search(_Iter first, _Iter last, const _Value value)
