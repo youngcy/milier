@@ -45,11 +45,20 @@ size_t wseg::words_segment(std::string document, _words_map_t &words_map)
 
 	//RMM algorithm
 	while (forward != document.rend()) {
-		while (!is_punctuation(forward)) {
+		while (forward != document.rend() &&
+			!is_punctuation(forward)) {
 			++forward;
 		}
 		tmp = forward;
-		--forward;
+		if (forward == behinde) {
+			//all are punctuations or all words are not find in dict
+			behinde = tmp = --forward;
+			continue;
+		}
+		if (forward != document.rend()) {
+			//exist punctuation
+			--forward;
+		}
 		if (forward > behinde) {
 			break;			//all words is punctuations
 		}
