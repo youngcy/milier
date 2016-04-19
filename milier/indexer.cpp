@@ -5,7 +5,7 @@
 indexer::indexer()
 {
 	_docsdb = std::make_shared<docsdb>();
-	_wseg = std::make_shared<wseg>();
+	_wseg = std::make_shared<wseg>(2);
 }
 
 

@@ -1,7 +1,8 @@
 #include "wseg.h"
 
-wseg::wseg(std::string fname, size_t n_gram)
+wseg::wseg()
 {
+	std::string fname("./dict");
 	std::ifstream in(fname);
 	if (in.is_open()) {
 		std::string dict_fname;
@@ -10,7 +11,6 @@ wseg::wseg(std::string fname, size_t n_gram)
 		}
 		in.close();
 	}
-	_n_gram = n_gram;
 }
 
 wseg::~wseg()
