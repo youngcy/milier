@@ -24,6 +24,8 @@ typedef struct _inverted_index_iterm {
 	size_t token_count;					//total token count
 }inverted_index_iterm;
 
+typedef std::vector<postings_list>::iterator _postings_list_iter_t;
+
 typedef std::map<std::string, inverted_index_iterm> _index_dict_t;
 typedef std::map<std::string, inverted_index_iterm>::iterator _index_dict_iter_t;
 
@@ -31,7 +33,7 @@ typedef std::map<std::string, postings_list> _words_map_t;
 typedef std::map<std::string, postings_list>::iterator _words_map_iter_t;
 
 template <type _Iter, type _Value>
-int binary_search(_Iter first, _Iter last, const _Value value)
+size_t binary_search(_Iter first, _Iter last, const _Value value)
 {
 	_Iter mid = (first + last) / 2;
 	while (first <= last) {

@@ -10,9 +10,8 @@ std::vector<std::string> _punctuations = {
 class wseg
 {
 public:
-	wseg();
+	wseg(std::string fname, size_t n_gram);
 	~wseg();
-	wseg(int n_gram);
 
 	bool is_punctuation(std::string::reverse_iterator iter) const;
 	size_t init_the_words_dict();

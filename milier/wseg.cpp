@@ -1,20 +1,22 @@
 #include "wseg.h"
 
-wseg::wseg()
+wseg::wseg(std::string fname, size_t n_gram)
 {
-	_n_gram = 2;
+	std::ifstream in(fname);
+	if (in.is_open()) {
+		std::string dict_fname;
+		while (std::getline(in, dict_fname)) {
+			_dicts_fname.push_back(dict_fname);
+		}
+		in.close();
+	}
+	_n_gram = n_gram;
 }
-
 
 wseg::~wseg()
 {
 	_dicts_fname.clear();
 	_words_dict.clear();
-}
-
-wseg::wseg(int n_gram = 2)
-{
-	_n_gram = n_gram;
 }
 
 bool wseg::is_punctuation(std::string::reverse_iterator iter) const
